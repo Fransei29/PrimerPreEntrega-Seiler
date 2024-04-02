@@ -1,0 +1,221 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.containerAqui {  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows:  0.5fr 0.5fr 0.5fr 0.4fr 0.5fr 0.5fr 0.2fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "TiName TiName TiPic TiPic"
+      "Shopp Shopp Shopp Shopp"
+      "About About About About"
+      "ImgBack ImgBack ImgBack ImgBack"
+      "Send Send Send Send"
+      "Locat Locat Locat Locat"
+      "Pie Pie Pie Pie";
+  }
+  
+  .TiName { 
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: rgb(216, 219, 40) ;
+      color: black;
+      grid-area: TiName;
+   }
+   .textoTiName {
+    padding-left: 15px;
+    padding-right: 75px;  
+
+   }
+  
+  .TiPic { 
+    background-image: url("./img/mujerasi3.jpg");
+    background-repeat: no-repeat;
+    background-size: 136%;
+    grid-area: TiPic;
+   }
+  
+  
+  .About { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    height: auto;
+    width: 100%;
+    grid-area: About;
+ }
+  .textoAbout {
+    padding-right: 25%;
+    padding-left: 25%;
+  }
+  .ImgBack { 
+    background-image: url("./img/amigos.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    height: auto;
+    grid-area: ImgBack; }
+  
+  .Send { grid-area: Send; }
+  
+  .Locat { grid-area: Locat; }
+  
+  .Pie { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(23, 21, 31, 0.8);
+    color: white;
+    height: auto;
+    width: 100%;
+    grid-area: Pie;
+   }
+
+  /* ---- INICIO NAVBAR ---- */
+  .desktop {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    height: 11vh;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    z-index: 5;
+    font-size: 20px;
+  }
+  .desktop a {
+    padding: 20px;
+    color: black;
+    text-decoration: none;
+  }
+  .desktop a:hover {
+    transform: scale(1.1);
+  }
+  .secondary-full {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  nav .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+  
+  #logoo {
+    padding: 11px 0;
+    text-align: center;
+    position: relative;
+    color: black;
+    font-size: 28px;
+  }
+  
+  /* ---- FIN NAVBAR ---- */
+  
+  
+  img {
+    width: 200px;
+    height: 180px;
+  }
+  #Nombre {
+    font-size: 19px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  /* --- SHOP */
+  .container-shop {  
+    display: grid;
+    background-color: rgb(23, 21, 31, 0.8);
+    color: white;
+    place-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Frase Frase Frase"
+      "Art1 Art2 Art3"
+      "Art4 Art5 Art6"
+      "Carrito Carrito Carrito";
+  }
+  .Shopp { 
+    grid-area: Shopp;
+ }
+ .Frase { grid-area: Frase; }
+
+  .Art1 { grid-area: Art1; }
+  
+  .Art2 { grid-area: Art2; }
+  
+  .Art3 { grid-area: Art3; }
+  
+  .Art4 { grid-area: Art4; }
+  
+  .Art5 { grid-area: Art5; }
+  
+  .Art6 { grid-area: Art6; }
+  
+  .Carrito { 
+    color: black;
+    border-radius: 10px;
+    padding: 0px 20px 5px 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    background-color: rgb(216, 219, 40) ;
+    grid-area: Carrito;
+   }
+ .titleCarro {
+  margin-top: -5px;
+ }
+   #cart{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+  
+
+  .ali {
+    background-color:white;
+    color: black;
+    padding-top: -15px;
+    padding-bottom: 5px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .ali:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  .buttonplace{
+    background-color:rgb(216, 219, 40);
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: negro;
+    padding: 14px;
+    border-style: none;
+    border-radius: 10px;
+  }
+
+  .buttonplace:hover {
+    cursor: pointer;
+  }
+  
