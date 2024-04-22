@@ -1,17 +1,17 @@
-// --- Registro de bienvenida e inicio de preguntas al cliente
+// --- Registro de bienvenida e inicio de preguntas al cliente ---
 let anioNacimiento = parseInt(prompt("Hola\nA continuacion realizaremos algunas preguntas..\nEn qué año naciste?"));
 const edadActual = 2022 - anioNacimiento;
 let nombre = prompt("¿Cual es tu nombre?");
 let apellido = prompt("¿Y tu apellido?");
 
 if (edadActual >= 18) {
-    mensaje = (`Hola ${nombre} ${apellido}, sabiendo qué tienes ${edadActual} años, te doy la bienvenida a mi WebShop!`)
+    mensaje = (`¡Hola ${nombre} ${apellido}!<br> Sabiendo qué tienes ${edadActual} años, te doy la bienvenida a mi WebShop!`)
     document.getElementById("Nombre").innerHTML = mensaje;
 } else {
     alert("Espero que un mayor te ayude a supervisar tu compra.");
 }
 
-// --- Funcion de elección de articulo
+// --- Funcion de elección de articulo ---
 function elegirArticulo() {
 
     let accesorio = (prompt("¿Qué artículo te gustaría comprar?\n1- Zapatilla\n2- Ojota\n3- Pantalón\n4- Remera\n5- Campera"));
@@ -38,7 +38,7 @@ function elegirArticulo() {
 
 let resultadoEleccion = elegirArticulo();
 
-// --- Una vez que la pagina haya cargado, preguntaremos que le parecio la pagina al usuario 
+// --- Una vez que la pagina haya cargado, preguntaremos que le parecio la pagina al usuario --- 
 document.addEventListener('DOMContentLoaded', function() {
     
     let consulta;
@@ -48,11 +48,11 @@ document.addEventListener('DOMContentLoaded', function() {
         consulta = prompt("Hola\n¿Qué te pareció la página?\nBuena\nMala")
 
     if (consulta === "buena" || consulta === "Buena") {
-        mensaje = "Y tambien me alegro mucho que te haya gustado mi pagina."
+        mensaje = "También me alegra saber que te ha gustado mi pagina!"
         document.getElementById("Agradezco").innerHTML = mensaje;
         break;
     } else {
-        let segundoMensaje = "Mejorare.."
+        let segundoMensaje = "Entiendo qué no estes conforme con mi página. Mejoraré.."
         document.getElementById("Agradezco").innerHTML = segundoMensaje;
         break;
     }
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 });
 
-// --- Creacion de una clase Producto
+// --- Creacion de una clase Producto ---
 class Producto {
     constructor(nombre, precio, stock) {
         this.nombre = nombre;
@@ -82,7 +82,7 @@ class Producto {
         }
     }
 }
-// --- Creacion de productos que utilizaremos con la clase creada anteriormente 
+// --- Creacion de productos que utilizaremos con la clase creada anteriormente ---
 const producto1 = new Producto("Zapatillas", 50, 20);
 const producto2 = new Producto("Ojota", 20, 20);
 const producto3 = new Producto("Pantalon", 30, 20);
@@ -90,16 +90,16 @@ const producto4 = new Producto("Remera", 30, 20);
 const producto5 = new Producto("Campera", 40, 20);
 const producto6 = new Producto("Lentes", 40, 20);
 
-// --- Escritura de resultado en el html
+// --- Escritura de resultado en el html ---
 document.getElementById("Aqui").innerHTML = (`
     Usted ha ordenado comprar ${producto1.cantidadVentas()} artículos <br>
     Por lo tanto, nos quedan ${producto1.comprar()} en stock`);
 
-// --- Uso de la función comprar en el producto 1
+// --- Uso de la función comprar en el producto 1 ---
 producto1.comprar();
 
 
-// --- Array de productos 
+// --- Array de productos ---
 const productos = [
     new Producto("Zapatillas", 50, 20),
     new Producto("Ojotas", 20, 20),
@@ -109,26 +109,26 @@ const productos = [
     new Producto("Lentes", 40, 20)
 ];
 
-//--- Teniendo en cuenta el array que creamos anteriormente y el precio deseado por el cliente, mostraremos a qué productos puede acceder.
-const precioDeseado = parseInt(prompt("Ingresa el monto qué deseas gastar y te mostraré los productos que se ajusten a ello."));
+//--- Teniendo en cuenta el array que creamos anteriormente y el precio deseado por el cliente, mostraremos a qué productos puede acceder. ---
+const precioDeseado = parseInt(prompt("Ingresa el monto qué deseas gastar y te mostraré los productos que se ajusten a ello.\n($20 hasta $50)"));
 
-// --- Utilizamos el metodo de filtrado para arrays
+// --- Utilizamos el metodo de filtrado para arrays ---
 const productosFiltradosPorPrecio = productos.filter(producto => producto.precio >= precioDeseado);
 
-// --- Mostramos los productos filtrados en la consola
+// --- Mostramos los productos filtrados en la consola ---
 console.log("Productos con precio igual o superior al precio deseado:", productosFiltradosPorPrecio);
 
-// --- Mostrar los productos filtrados en el elemento HTML
+// --- Mostrar los productos filtrados en el elemento HTML ---
 document.getElementById("Alla").innerHTML = ""; 
 
-// --- Atraves de un bucle (forEach) recorremos un array de productos los cuales estan filtrados por el precio e insertamos el resultado en el html de una forma dinamica.
+// --- Atraves de un bucle (forEach) recorremos un array de productos los cuales estan filtrados por el precio e insertamos el resultado en el html de una forma dinamica. ---
 productosFiltradosPorPrecio.forEach(producto => {
     document.getElementById("Alla").innerHTML += `
-        ${producto.nombre} - Precio: $${producto.precio} - Stock: ${producto.stock} <br>`;
+        Podrá comprar : ${producto.nombre}, ya qué cuestan $${producto.precio}<br>`;
 });
 
 
-// --- Creacion de calculadora completa
+// --- Creacion de calculadora completa ---
 // Creamos una clase con los metodos que va a tener esta calculadora y lo que retornará
 class Calculadora{
     constructor(){}
@@ -151,8 +151,7 @@ class Calculadora{
 const calculadora = new Calculadora();
 
 // Interactuamos con el usuario para que nos de los numero y nos indique que operacion realizar
-alert("Que operacion desea realizar?");
-let operacion = prompt ("1: suma, 2: resta, 3: division, 4: multiplicacion");
+let operacion = prompt("¿Qué operacion desea realizar?\n1: suma\n2: resta\n3: división\n4: multiplicación");
 
 if (operacion == 1) {
     let numero1 = prompt("primer numero para sumar");
@@ -182,3 +181,78 @@ else {
     alert("no se ha encontrado");
 }
 
+
+
+//                --- >>> CREACION DEMO DE CARRITO DE COMPRAS OFICIAL <<< --- 
+
+
+// --- Definimos una variable para almacenar los productos en el carrito
+let cart = [];
+
+// --- Funcion de agregar un producto al carrito 
+function addToCart(productId, productName, productPrice) {
+    // ---Objeto representando el producto a agregar
+    const product = {
+        id: productId,
+        name: productName,
+        price: productPrice
+    };
+
+    //---Agregar el producto al carrito
+    cart.push(product);
+
+    //---Actualizar visualización del carrito
+    updateCart();
+}
+
+// Función para actualizar la visualización del carrito
+function updateCart() {
+    // Obtenemos el elemento del carrito en el HTML
+    const cartElement = document.getElementById('cartItems');
+    // Limpiamos el contenido actual del carrito
+    cartElement.innerHTML = '';
+
+    // ---Calcular el total de la compra
+    let totalPrice = 0;
+
+    //---Iterar sobre productos en el carrito
+    cart.forEach(product => {
+        // -Creamos un elemento de lista para mostrar el producto en el carrito
+        const listItem = document.createElement('li');
+        listItem.textContent = `${product.name} - Precio: $${product.price}`;
+        // -Agregamos el elemento al carrito
+        cartElement.appendChild(listItem);
+        // -Sumamos el precio del producto al total
+        totalPrice += product.price;
+    });
+
+    //---Actualizar el total de la compra en el HTML
+    const totalPriceElement = document.getElementById('totalPrice');
+    totalPriceElement.textContent = `Total: $${totalPrice}`;
+}
+
+// --- Agregar eventos de clic a los botones "Agregar al carrito"
+document.getElementById('addToCart1').addEventListener('click', function() {
+    addToCart(1, 'Zapatilla', 50);
+});
+document.getElementById('addToCart2').addEventListener('click', function() {
+    addToCart(2, 'Ojota', 20);
+});
+document.getElementById('addToCart3').addEventListener('click', function() {
+    addToCart(3, 'Pantalon', 30);
+});
+document.getElementById('addToCart4').addEventListener('click', function() {
+    addToCart(4, 'Remera', 30);
+});
+document.getElementById('addToCart5').addEventListener('click', function() {
+    addToCart(5, 'Campera', 50);
+});
+document.getElementById('addToCart6').addEventListener('click', function() {
+    addToCart(6, 'Lentes', 40);
+});
+
+// Agregar evento de clic al botón "Comprar"
+document.getElementById('comprar-btn').addEventListener('click', function() {
+    console.log('Usted ha comprado: ', cart);
+    alert('¡Compra realizada! Revisa la consola para ver los detalles.');
+});
