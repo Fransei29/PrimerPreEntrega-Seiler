@@ -1,301 +1,350 @@
-
+/* Configuración básica del cuerpo y la fuente */
 html, body {
-    font-family: "Oswald", sans-serif;
-    /* font-optical-sizing: auto;
-    font-weight: <weight>; */
-    font-style: normal;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+  font-family: "Oswald", sans-serif;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
+
+/* Establece la estructura del contenedor principal usando grid */
 .containerAqui {  
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows:  0.5fr 0.5fr 0.5fr 0.4fr 0.4fr 0.5fr 0.1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "TiName TiName TiPic TiPic"
-      "Shopp Shopp Shopp Shopp"
-      "About About About About"
-      "ImgBack ImgBack ImgBack ImgBack"
-      "Send Send Send Send"
-      "Locat Locat Locat Locat"
-      "Pie Pie Pie Pie";
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 0.3fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "TiName TiName TiPic TiPic"
+    "Shoping Shoping Shoping Shoping"
+    "About About About About"
+    "ImgBack ImgBack ImgBack ImgBack"
+    "Send Send Send Send"
+    "Locat Locat Locat Locat"
+    "Pie Pie Pie Pie";
+}
+
+/* Estilos para la sección del título y la navegación */
+.TiName { 
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 18px;
+  background-color: rgb(216, 219, 40);
+  color: black;
+  grid-area: TiName;
+}
+.textoTiName {
+  font-size: 18px;
+  padding-left: 15px;
+  padding-right: 75px;  
+
+}
+#Nombre, #Aqui, #Alla, #Agradezco {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 22px;
+}
+.Newform {
+font-family: "IBM Plex Sans", sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+.TiPic { 
+  grid-area: TiPic;
+}  
+
+/* Configuración de la sección "Acerca de Nosotros" */
+.About { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  height: auto;
+  width: 100%;
+  font-size: 20px;
+  grid-area: About;
+}
+.textoAbout {
+  padding-right: 25%;
+  padding-left: 25%;
   }
-  
-  .TiName { 
-      width: 100%;
-      height: auto;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      font-size: 18px;
-      background-color: rgb(216, 219, 40);
-      color: black;
-      grid-area: TiName;
-   }
-   .textoTiName {
+.ImgBack { 
+  background-image: url("./img/felicidad.jpg");
+  background-attachment: fixed;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: auto;
+  grid-area: ImgBack; 
+}
+
+/* Configuración de la sección de entrega */
+.Send { 
+  grid-area: Send;
+}
+.containerSend {
+  display: grid; 
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+  "FirstPart FirstPart SecondPart"; 
+}
+.FirstPart {
+  grid-area: FirstPart;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  justify-self: center;
+  height: 75%;
+  width: 90%;
+  padding-left: 1%;
+  font-size: 18px;
+}
+.SecondPart { 
+background-image: url("./img/repartidor_1368-148.jpg");
+background-size: cover;
+height: 100%;
+grid-area: SecondPart;
+}
+li {
+margin: 35px;
+}
+
+/* Configuración de la sección de localización */
+.Locat { grid-area: Locat; }
+.ContainerLocat {
+  height: 100%;
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "first second"; 
+}
+.pictureCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  grid-area: first;
+}
+.infoCont {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  grid-area: second;
+}
+.Pat {
+  font-size: 17px;
+  padding-right: 5px;
+}
+.picNi {
+  height: 450px;
+  width: 450px;
+}
+
+/* Configuración de la sección del pie de pagina */
+.Pie { 
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: rgb(23, 21, 31, 0.8);
+  color: white;
+  height: auto;
+  width: 100%;
+  grid-area: Pie;
+  overflow: hidden;
+  }
+  .Pie p {
+    margin: 10px 20px;
     font-size: 18px;
-    padding-left: 15px;
-    padding-right: 75px;  
+}
 
-   }
-   #Nombre, #Aqui, #Alla, #Agradezco {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 22px;
-   }
-   .Newform {
-    font-family: "IBM Plex Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-   }
-  
-  .TiPic { 
-    background-image: url("./img/mujerasi3.jpg");
-    background-repeat: no-repeat;
-    background-size: 136%;
-    grid-area: TiPic;
-   }
-  
-  
-  .About { 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    height: auto;
-    width: 100%;
-    font-size: 20px;
-    grid-area: About;
- }
-  .textoAbout {
-    padding-right: 25%;
-    padding-left: 25%;
-  }
-  .ImgBack { 
-    background-image: url("./img/image0.jpeg");
-    background-attachment: fixed;
-    background-size: cover;
-    height: auto;
-    grid-area: ImgBack; }
-  
-  .Send { 
-    grid-area: Send;
-   }
-   .containerSend {
-    display: grid; 
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    grid-template-columns: 1fr 1fr 1fr; 
-    grid-template-rows: 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "FirstPart FirstPart SecondPart"; 
-  }
-  .FirstPart {
-    grid-area: FirstPart;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    justify-self: center;
-    height: 75%;
-    width: 100%;
-    padding-left: 15%;
-    padding-right: 10%;
-    font-size: 18px;
-   }
+.Pie p:last-child {
+    margin-left: auto;
+}
+.picNi {
+  border-radius: 30px;
+}
 
-  .SecondPart { 
-    background-image: url("./img/repartidor_1368-148.jpg");
-    background-size: cover;
-    height: 100%;
-    grid-area: SecondPart;
-   }
-   li {
-    margin: 35px;
-   }
-  
-  .Locat { grid-area: Locat; }
-  .ContainerLocat {
-    height: 100%;
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "first second"; 
-  }
-  .pictureCont {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
-    grid-area: first;
-  }
-  .infoCont {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
-    grid-area: second;
-  }
-  .picNi {
-    height: 450px;
-    width: 450px;
-  }
-  .Pie { 
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    background-color: rgb(23, 21, 31, 0.8);
-    color: white;
-    height: auto;
-    width: 100%;
-    grid-area: Pie;
-   }
+/* --- SHOPING */
+/* Configuración del Área de Productos */
+#productos-container {
+  grid-area: Shoping;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+}
 
-  /* ---- INICIO NAVBAR ---- */
-  .desktop {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    position: fixed;
-    height: 11vh;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgb(255, 255, 255);
-    z-index: 5;
-    font-size: 20px;
-  }
-  .desktop a {
-    padding: 20px;
-    color: black;
-    text-decoration: none;
-  }
-  .desktop a:hover {
-    transform: scale(1.1);
-  }
-  .secondary-full {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  nav .logo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-  }
-  
-  #logoo {
-    padding: 11px 0;
-    font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    text-align: center;
-    position: relative;
-    color: black;
-    font-size: 35px;
-  }
-  
-  /* ---- FIN NAVBAR ---- */
-  
-  
-  img {
-    width: 200px;
-    height: 180px;
-  }
+.ali {
+  flex: 1; 
+  min-width: 200px; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  height: 100%;
+}
 
-  /* --- SHOP */
-  .container-shop {  
-    display: grid;
-    background-color: rgb(23, 21, 31, 0.8);
-    color: white;
-    place-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "Frase Frase Frase"
-      "Art1 Art2 Art3"
-      "Art4 Art5 Art6"
-      "Carrito Carrito Carrito";
-  }
-  .Shopp { 
-    grid-area: Shopp;
- }
- .Frase { grid-area: Frase; }
+.ali img {
+  width: 100%;
+  max-height: 200px;
+  max-width: 200px;
+}
 
-  .Art1 { grid-area: Art1; }
-  
-  .Art2 { grid-area: Art2; }
-  
-  .Art3 { grid-area: Art3; }
-  
-  .Art4 { grid-area: Art4; }
-  
-  .Art5 { grid-area: Art5; }
-  
-  .Art6 { grid-area: Art6; }
-  
-  .Carrito { 
-    color: black;
-    border-radius: 10px;
-    padding: 0px 20px 5px 20px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    background-color: rgb(216, 219, 40) ;
-    grid-area: Carrito;
-   }
- .titleCarro {
+.ali:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.Carrito { 
+  color: black;
+  border-radius: 10px;
+  padding: 0px 20px 5px 20px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  background-color: rgb(216, 219, 40) ;
+}
+.titleCarro {
   margin-top: -5px;
- }
-   #cart{
-    margin: 20px;
-    display: flex;
+}
+#cart {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonplace {
+  background-color:rgb(216, 219, 40);
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: negro;
+  padding: 14px;
+  border-style: none;
+  border-radius: 10px;
+}
+
+.buttonplace:hover {
+cursor: pointer;
+}
+
+/* ---- Configuración e inicio del NAVBAR ---- */
+.desktop {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  height: 11vh;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  z-index: 5;
+  font-size: 20px;
+}
+.desktop a {
+  padding: 20px;
+  color: black;
+  text-decoration: none;
+}
+.desktop a:hover {
+  transform: scale(1.1);
+}
+.secondary-full {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+nav .logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+#logoo {
+  padding: 11px 0;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  text-align: center;
+  position: relative;
+  color: black;
+  font-size: 35px;
+}
+
+/* ---- FIN NAVBAR ---- */
+
+/* Estilos Base para dispositivos móviles */
+@media (max-width: 768px) {
+.desktop {
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-   }
-  
-
-  .ali {
-    background-color:white;
-    color: black;
-    padding-top: -15px;
-    padding-bottom: 5px;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .ali:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-  }
-  .buttonplace{
-    background-color:rgb(216, 219, 40);
-    margin-bottom: 10px;
-    font-size: 15px;
-    color: negro;
-    padding: 14px;
-    border-style: none;
-    border-radius: 10px;
-  }
-
-  .buttonplace:hover {
-    cursor: pointer;
-  }
-  
+    padding: 10px 0;
+}
+.desktop a {
+    padding: 10px;
+    font-size: 16px; /* Tamaño de fuente más pequeño para enlaces */
+}
+.containerAqui {
+grid-template-areas:
+    "TiName"
+    "Shoping"
+    "About"
+    "ImgBack"
+    "Send"
+    "Locat"
+    "Pie";
+grid-template-rows: auto auto auto auto auto auto 0.3fr; /* ajusta la altura de las filas */
+}
+.TiName, .About, .Send, .Locat {
+padding: 15px;
+}
+.textoTiName, .textoAbout, .FirstPart, .infoCont {
+padding: 5%; /* Padding más generoso para mejorar la legibilidad */
+}
+.Carrito, #productos-container {
+flex-direction: column;
+}
+.ali {
+min-width: 100%; /* Las cajas de productos ocupan todo el ancho */
+margin-bottom: 20px; /* Añade espacio entre productos */
+}
+.ali img {
+max-height: auto;
+max-width: 100%;
+}
+.Pie {
+flex-direction: column;
+align-items: center; /* Centra los elementos del pie de página */
+}
+.Pie p {
+text-align: center; /* Alinea el texto al centro */
+margin: 10px;
+}
+.picNi {
+width: 100%; /* Ajusta la imagen para que sea responsiva */
+height: auto;
+}
+.SecondPart {
+display: none; /* Opcionalmente, oculta partes del diseño no esenciales */
+}
+}

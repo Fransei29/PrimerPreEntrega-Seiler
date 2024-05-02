@@ -1,5 +1,5 @@
 // En este codigo, vas a poder observar los recursos aprendidos a lo largo del curso.
-// Algunos estarán comentados (y listos para ser usados) para la optimización visual y funcional de la pagina web.
+// Algunos estarán comentados (también en el script de html por lo visto en "sugerencias") para la optimización visual y funcional de la pagina web.
 
 
 //     --- Registro de bienvenida e inicio de preguntas al cliente ---
