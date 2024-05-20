@@ -1,5 +1,4 @@
 //              --- >>> CREACION CARRITO DE COMPRAS <<< --- 
-
 // Definición de la CLASE Producto
 class Producto {
     constructor(id, nombre, precio, imagen) {
@@ -76,30 +75,36 @@ function cargarCarritoDeLocalStorage() {
     }
 }
 
-
+// Obtiene los productos desde un archivo JSON
+async function obtenerProductos() {
+    try {
+        const response = await fetch("../productos.json");
+        const productosJSON = await response.json();
+        return productosJSON.map(p => new Producto(p.id, p.nombre, p.precio, p.imagen));
+    } catch (error) {
+        console.error('Error al obtener los productos:', error);
+        return [];
+    }
+}
 
 // Inicialización del programa
-// Lista de productos usando la nueva clase Producto
-const productos = [
-    new Producto(1, 'Zapatilla', 50, 'zapatilla'),
-    new Producto(2, 'Ojota', 20, 'ojota'),
-    new Producto(3, 'Pantalon', 30, 'pantalones_1203-8308.jpg'),
-    new Producto(4, 'Remera', 30, 'remera'),
-    new Producto(5, 'Campera', 50, 'campera'),
-    new Producto(6, 'Lentes', 40, 'lentes')
-];
-
-// Variables y funciones globales
+let productos = [];
 let cart = [];
 
 // Inicialización del DOM y programa
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+    productos = await obtenerProductos();
     cargarCarritoDeLocalStorage();
-    agregarProductosAlHTML();
-    agregarEventosDeCarrito();
+    agregarProductosAlHTML(productos);
+    agregarEventosDeCarrito(productos);
     document.getElementById('comprar-btn').addEventListener('click', function() {
-        console.log('Usted ha comprado: ', cart);
-        alert('¡Compra realizada! Revisa la consola para ver los detalles.');
+        Swal.fire({
+            title: 'Felicitaciones!',
+            text: 'El producto está en camino',
+            icon: 'success',
+            confirmButtonText: 'Ok'
+          })
+        console.log('Usted ha comprado: ', JSON.stringify(cart, null, 2)); // Formatear la salida para mejor legibilidad
         cart = [];
         actualizarLocalStorage();
         updateCart();
